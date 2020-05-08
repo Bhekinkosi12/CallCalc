@@ -17,5 +17,10 @@ namespace CallCalc
         {
             InitializeComponent();
         }
+        private void OnDayRationClicked(object sender, System.EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.Text = "OK";
+        }
     }
 }

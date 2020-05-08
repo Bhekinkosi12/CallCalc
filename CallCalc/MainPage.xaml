@@ -6,15 +6,15 @@
              mc:Ignorable="d"
              x:Class="CallCalc.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="EndAndExpand" />
-        <Button Text ="Click!" 
-           HorizontalOptions="Center"
-           VerticalOptions="Center"/>
-    </StackLayout>
+    <RelativeLayout>
+        <Button Text="Ration for one day" Clicked="OnDayRationClicked"
+                WidthRequest="200" HeightRequest="50"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width, Factor=0.5, Constant=-100}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height, Factor=0.1, Constant=0}"
+        />
+    </RelativeLayout>
     
 
 </ContentPage>
