@@ -7,14 +7,29 @@
              x:Class="CallCalc.MainPage">
 
     <RelativeLayout>
-        <Button Text="Ration for one day" Clicked="OnDayRationClicked"
+        <Button Text="Рацион на день" Clicked="OnDayRationClicked"
                 WidthRequest="200" HeightRequest="50"
                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
                 Property=Width, Factor=0.5, Constant=-100}"
                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-                Property=Height, Factor=0.1, Constant=0}"
-        />
+                Property=Height, Factor=0.1, Constant=0}"/>
+        <Button Text="Список блюд" Clicked="DishListClicked"
+                WidthRequest="200" HeightRequest="50"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width, Factor=0.5, Constant=-100}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height, Factor=0.2, Constant=0}"/>
+        <Button Text="Избранное" Clicked="FavoritClicked"
+                WidthRequest="200" HeightRequest="50"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width, Factor=0.5, Constant=-100}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height, Factor=0.3, Constant=0}"/>
+        <Button Text="Учёт съеденного" Clicked="DailySummClicked"
+                WidthRequest="200" HeightRequest="50"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width, Factor=0.5, Constant=-100}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height, Factor=0.4, Constant=0}"/>
     </RelativeLayout>
-    
-
 </ContentPage>

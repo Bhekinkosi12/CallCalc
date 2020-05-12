@@ -17,10 +17,25 @@ namespace CallCalc
         {
             InitializeComponent();
         }
-        private void OnDayRationClicked(object sender, System.EventArgs e)
+        private async void OnDayRationClicked(object sender, System.EventArgs e)
         {
             Button button = (Button)sender;
-            button.Text = "OK";
+            await Navigation.PushAsync(new DishPlan());
+        }
+        private async void DishListClicked(object sender, System.EventArgs e)
+        {
+            Button button = (Button)sender;
+            await Navigation.PushAsync(new DishList());
+        }
+        private async void FavoritClicked(object sender, System.EventArgs e)
+        {
+            Button button = (Button)sender;
+            await Navigation.PushAsync(new Favorit());
+        }
+        private async void DailySummClicked(object sender, System.EventArgs e)
+        {
+            Button button = (Button)sender;
+            await Navigation.PushAsync(new DailySumm());
         }
     }
 }
