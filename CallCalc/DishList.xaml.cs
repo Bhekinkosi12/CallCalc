@@ -18,5 +18,6 @@ namespace CallCalc
             InitializeComponent();
             Title = "Список блюд";
         }
+        
     }
 }
