@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CallCalc.DishPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -18,6 +19,10 @@ namespace CallCalc
             InitializeComponent();
             Title = "Список блюд";
         }
-        
+        private async void FriedEggClicked(object sender, System.EventArgs e)
+        {
+            Button button = (Button)sender;
+            await Navigation.PushAsync(new FriedEggPage());
+        }
     }
 }

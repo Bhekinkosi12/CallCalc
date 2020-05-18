@@ -9,16 +9,35 @@ namespace CallCalc
         public double protein;
         public double fat;
         public double carbohydrates;
-        public int weight;
-        public double TotalCallories(double tcall)
+        public double weight = 100;
+        public void ChangeWeight(double w)
         {
-            _ = (protein * 4 + fat * 9 + carbohydrates * 4) / 100 * weight;
+            weight = w;
+        }
+        public double TotalCallories()
+        {
+            double tcall = (protein * 4 + fat * 9 + carbohydrates * 4) / 100 * weight;
             return tcall;
         }
         public double DefaultCallories(double call)
         {
             _ = protein * 4 + fat * 9 + carbohydrates * 4;
             return call;
+        }
+        public double TotalProtein(double tprot)
+        {
+            _ = protein / 100 * weight;
+            return tprot;
+        }
+        public double TotalFat(double tfat)
+        {
+            _ = fat / 100 * weight;
+            return tfat;
+        }
+        public double TotalCarbohydrates(double tcarb)
+        {
+            _ = carbohydrates / 100 * weight;
+            return tcarb;
         }
     }
 }
