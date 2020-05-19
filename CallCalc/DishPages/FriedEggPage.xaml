@@ -7,8 +7,7 @@
              x:Class="CallCalc.DishPages.FriedEggPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="EggWeightEntry" Placeholder="Введите количество" Keyboard="Numeric"
-                   VerticalOptions="Start" HorizontalOptions="Start" Completed="EggWeightEntry_Completed" />   
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

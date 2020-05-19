@@ -16,13 +16,38 @@ namespace CallCalc.DishPages
         public FriedEggPage()
         {
             InitializeComponent();
+            Title = " ";
+            Entry input = new Entry();
+            FriedEgg fegg = new FriedEgg(100);
+            Label output = new Label
+            {
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
+            };
+
+            int i = 0;
+
+            fegg.BindingContext = input;
+            fegg.SetBinding(FriedEgg.WeightProerty, "Text");
+            input.BindingContext = fegg;
+            input.SetBinding(Entry.TextProperty, "dishWeight");
+
+            input.TextChanged += Input_TextChanged;
+
+            fegg.BindingContext = output;
+            fegg.SetBinding(FriedEgg.tCallProperty, "Text");
+            output.BindingContext = fegg;
+            output.SetBinding(Label.TextProperty, "tCall");
+
+            StackLayout stackLayout = new StackLayout
+            {
+                Children = { input, output }
+            };
+            Content = stackLayout;
         }
 
-        private void EggWeightEntry_Completed(object sender, EventArgs e)
+        public void Input_TextChanged(object sender, TextChangedEventArgs e)
         {
-            double c;           
-            FriedEgg fegg = new FriedEgg(200);
-            c = fegg.TotalCallories();
+            Entry input = (Entry)sender;                        
         }
     }
 }
