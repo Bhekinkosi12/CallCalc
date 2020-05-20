@@ -13,41 +13,37 @@ namespace CallCalc.DishPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FriedEggPage : ContentPage
     {
+        public FriedEgg fegg = new FriedEgg(100);
         public FriedEggPage()
         {
             InitializeComponent();
-            Title = " ";
-            Entry input = new Entry();
-            FriedEgg fegg = new FriedEgg(100);
-            Label output = new Label
-            {
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
-            };
+            Title = "";
 
-            int i = 0;
+            Slider input = new Slider {Minimum = 0, Maximum = 500, Value = 200 };
+            Label output = new Label();
+            Label header = new Label();
 
-            fegg.BindingContext = input;
-            fegg.SetBinding(FriedEgg.WeightProerty, "Text");
-            input.BindingContext = fegg;
-            input.SetBinding(Entry.TextProperty, "dishWeight");
+            Binding headerBinding = new Binding { Source = input, Path = "Value" };
+            header.SetBinding(Label.TextProperty, headerBinding);
 
-            input.TextChanged += Input_TextChanged;
+            Binding inputBinding = new Binding {Source = input, Path = "Value"};
+            fegg.SetBinding(FriedEgg.WeightProerty, inputBinding);
 
-            fegg.BindingContext = output;
-            fegg.SetBinding(FriedEgg.tCallProperty, "Text");
-            output.BindingContext = fegg;
-            output.SetBinding(Label.TextProperty, "tCall");
+            Binding outputBinding = new Binding { Source = fegg, Path = "TCallProperty"};
+            output.SetBinding(Label.TextProperty, outputBinding);
+
+            input.ValueChanged += Input_ValueChanged;
 
             StackLayout stackLayout = new StackLayout
             {
-                Children = { input, output }
+                Children = { header, input, output }
             };
             Content = stackLayout;
         }
 
-        public void Input_TextChanged(object sender, TextChangedEventArgs e)
+        private void Input_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            Entry input = (Entry)sender;                        
+            fegg.TotalCallories();
         }
     }
 }

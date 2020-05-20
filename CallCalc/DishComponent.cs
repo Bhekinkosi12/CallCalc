@@ -9,7 +9,7 @@ namespace CallCalc
         public double protein;
         public double fat;
         public double carbohydrates;
-        public double weight = 100;
+        public double weight = 100.0;
         public void ChangeWeight(double w)
         {
             weight = w;
