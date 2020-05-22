@@ -7,28 +7,26 @@ namespace CallCalc.Dishes
 {
     public class FriedEgg : BindableObject
     {
-        public static readonly BindableProperty WeightProerty = BindableProperty.Create("DishWeight", typeof(double), typeof(FriedEgg), 100.0);
+        public static readonly BindableProperty DishWeightProperty = BindableProperty.Create("DishWeight", typeof(double), typeof(FriedEgg), 100.0);
+
         public double DishWeight
         {
-            get { return (double)GetValue(WeightProerty); }
-            set { SetValue(WeightProerty, value); }
+            get
+            {
+                return (double)GetValue(DishWeightProperty);
+            }
+            set
+            {
+                SetValue(DishWeightProperty, value);
+            }
         }
-
-
-        public static readonly BindableProperty TCallProperty = BindableProperty.Create("TCall", typeof(string), typeof(FriedEgg), "100.0");
-        public string TCall
-        {
-            get { return (string)GetValue(TCallProperty); }
-            set { SetValue(TCallProperty, value); }
-        }
-
-
+        public string TCall;
         public FriedEgg (double w)
         {
             DishWeight = w;
         }
-        public DishComponent egg = new Egg();
-        public DishComponent oil = new SunflowerOil();
+        DishComponent egg = new Egg();
+        DishComponent oil = new SunflowerOil();
         public void TotalCallories()
         {
             egg.ChangeWeight(DishWeight * 0.95);
