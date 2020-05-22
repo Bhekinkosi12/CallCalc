@@ -19,7 +19,8 @@ namespace CallCalc.DishPages
             InitializeComponent();
             this.BindingContext = new DishViewModel();
             Binding binding = new Binding { Source = input, Path = "Value" };
-            this.SetBinding(FriedEgg.DishWeightProperty, binding);
+            this.SetBinding(DishViewModel.DishWeight, binding);
+            Binding binding1 = new Binding { Source = }
         }
     }
 }

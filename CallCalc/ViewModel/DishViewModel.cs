@@ -28,10 +28,7 @@ namespace CallCalc.ViewModel
                 }
             }
         }
-        public string TCall
-        {
-            get { return fegg.TCall; }
-        }
+        public string TotallCall => fegg.TCall;
         public void TCallcomand()
         {
             fegg.TotalCallories();
