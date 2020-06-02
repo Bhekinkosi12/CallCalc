@@ -14,7 +14,6 @@ namespace CallCalc
         {
             viewModel = vm;
         }
-
         public bool CanExecute(object parameter)
         {
             return true;
@@ -22,7 +21,10 @@ namespace CallCalc
 
         public void Execute(object parameter)
         {
-            viewModel.TCallcomand();
+            if(CanExecute(parameter))
+            {
+                viewModel.DishWeight = ;
+            }
         }
     }
 }

@@ -17,10 +17,13 @@ namespace CallCalc.DishPages
         public FriedEggPage()
         {
             InitializeComponent();
-            this.BindingContext = new DishViewModel();
-            Binding binding = new Binding { Source = input, Path = "Value" };
-            this.SetBinding(DishViewModel.DishWeight, binding);
-            Binding binding1 = new Binding { Source = }
+            DishViewModel vm = new DishViewModel()
+            {
+                DishWeight = 100.0
+            };
+            this.BindingContext = vm;
+            vm.BindingContext 
+
         }
     }
 }

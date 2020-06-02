@@ -15,7 +15,6 @@ namespace CallCalc.ViewModel
             fegg = new FriedEgg(100.0);
             Calculate = new CalculateCommand(this);
         }
-
         public double DishWeight
         {
             get { return fegg.DishWeight; }
@@ -28,15 +27,28 @@ namespace CallCalc.ViewModel
                 }
             }
         }
-        public string TotallCall => fegg.TCall;
-        public void TCallcomand()
+        public double TotallCall
         {
-            fegg.TotalCallories();
+            get { return fegg.TCall; }
+            set
+            {
+                if (fegg.TCall != value)
+                {
+                    fegg.TCall = value;
+                    OnPropertyChanged("TCall");
+                }
+            }
         }
-
+        public double TCallcommand()
+        {
+            return fegg.TotalCallories();
+        }
         private void OnPropertyChanged(string propName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+            if(PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
         }
     }
 }
