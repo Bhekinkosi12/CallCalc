@@ -8,9 +8,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="header" FontSize="Large" HorizontalTextAlignment ="Center"  Text="{Binding Source={x:Reference Name=input}, Path=Value}"/>
-            <Slider x:Name="input" Minimum="0" Maximum="500" Value="200"/>
-            <Button x:Name="button" Text="Посчитать" Command="{Binding CalculateCommand}"/>
-            <Label x:Name="output" FontSize="Large" Text="{Binding DishWeight}"/>
+            <Slider x:Name="input" Minimum="0" Maximum="500" Value="{Binding Path=DishWeight}"/>
+            <Button x:Name="button" Text="Посчитать" Command="{Binding Calculate}"/>
+            <Label x:Name="output" FontSize="Large" Text="{Binding TotallCall}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

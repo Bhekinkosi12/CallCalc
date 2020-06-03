@@ -9,7 +9,6 @@ namespace CallCalc.Dishes
     public class FriedEgg
     {
         public double DishWeight { get; set; }
-        public double TCall { get; set; }
         public FriedEgg (double w)
         {
             DishWeight = w;
@@ -23,8 +22,7 @@ namespace CallCalc.Dishes
             double e = egg.TotalCallories();
             double o = oil.TotalCallories();
             e += o;
-            TCall = e;
-            return TCall;
+            return e;
         }
     }
 }

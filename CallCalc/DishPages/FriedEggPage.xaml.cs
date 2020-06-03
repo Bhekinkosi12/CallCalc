@@ -17,13 +17,8 @@ namespace CallCalc.DishPages
         public FriedEggPage()
         {
             InitializeComponent();
-            DishViewModel vm = new DishViewModel()
-            {
-                DishWeight = 100.0
-            };
+            DishViewModel vm = new DishViewModel();
             this.BindingContext = vm;
-            vm.BindingContext 
-
         }
     }
 }

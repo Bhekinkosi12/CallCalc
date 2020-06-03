@@ -9,6 +9,7 @@ namespace CallCalc.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public FriedEgg fegg;
         public ICommand Calculate { get; }
+        private double TCall;
 
         public DishViewModel()
         {
@@ -29,19 +30,20 @@ namespace CallCalc.ViewModel
         }
         public double TotallCall
         {
-            get { return fegg.TCall; }
+            get { return TCall; }
             set
             {
-                if (fegg.TCall != value)
+                if (TCall != value)
                 {
-                    fegg.TCall = value;
-                    OnPropertyChanged("TCall");
+                    TCall = value;
+                    OnPropertyChanged("TotallCall");
                 }
             }
         }
         public double TCallcommand()
         {
-            return fegg.TotalCallories();
+            TotallCall = fegg.TotalCallories();
+            return TotallCall;
         }
         private void OnPropertyChanged(string propName)
         {
