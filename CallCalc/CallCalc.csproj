@@ -19,10 +19,10 @@
     <EmbeddedResource Update="DailySumm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DishList.xaml">
+    <EmbeddedResource Update="DishesPage\DishesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DishPages\FriedEggPage.xaml">
+    <EmbeddedResource Update="DishList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="DishPlan.xaml">

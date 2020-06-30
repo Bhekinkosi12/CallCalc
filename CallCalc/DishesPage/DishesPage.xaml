@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CallCalc.DishesPage.DishesPage">
+    <StackLayout>
+        <Label Text="Выберите блюдо:" FontSize="Large"/>
+        <Picker x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>Яичница</x:String>
+                <x:String>Курица</x:String>
+            </Picker.Items>
+        </Picker>
+        <ListView>
+            
+        </ListView>
+    </StackLayout>
+</ContentPage>
