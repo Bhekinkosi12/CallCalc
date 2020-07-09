@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CallCalc.DishesPage.DishesPage">
+             x:Class="CallCalc.DishesPage.DishesPage" Title="List">
     <StackLayout>
         <Label Text="Выберите блюдо:" FontSize="Large"/>
         <Picker x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged">
@@ -13,8 +13,27 @@
                 <x:String>Курица</x:String>
             </Picker.Items>
         </Picker>
-        <ListView>
-            
+        <ListView x:Name="consumedList" ItemsSource="{Binding}" ItemSelected="consumedList_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" FontSize="Small"/>
+                                    <Label Text="{Binding TotallCall}" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Protein}" FontSize="Micro"/>
+                                    <Label Text="{Binding Fat}" FontSize="Micro"/>
+                                    <Label Text="{Binding Carbohydrates}" FontSize="Micro"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
+        <Label  Text="----" FontSize="Medium"/>
     </StackLayout>
 </ContentPage>

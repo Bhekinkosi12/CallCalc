@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using CallCalc.DishesPage;
 
 namespace CallCalc
 {
@@ -25,7 +26,7 @@ namespace CallCalc
         private async void DishListClicked(object sender, System.EventArgs e)
         {
             Button button = (Button)sender;
-            await Navigation.PushAsync(new DishList());
+            await Navigation.PushAsync(new DishesPage.DishesPage());
         }
         private async void FavoritClicked(object sender, System.EventArgs e)
         {
