@@ -28,7 +28,7 @@
     <EmbeddedResource Update="DailySumm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DishesPage\DishesPage.xaml">
+    <EmbeddedResource Update="DishesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="DishList.xaml">
