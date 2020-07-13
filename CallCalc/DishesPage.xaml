@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CallCalc.DishesPage.DishesPage" Title="List">
+             x:Class="CallCalc.DishesPage.DishesPage">
     <StackLayout>
         <Label Text="Выберите блюдо:" FontSize="Large"/>
         <Picker x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged">
@@ -13,6 +13,7 @@
                 <x:String>Курица</x:String>
             </Picker.Items>
         </Picker>
+        <Button Text="Добавить" Clicked="Button_Clicked"/>
         <ListView x:Name="consumedList" ItemsSource="{Binding}" ItemSelected="consumedList_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -34,6 +35,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Label  Text="----" FontSize="Medium"/>
+        <Label x:Name="bottom" BindingContext="{x:Reference Name=picker}" Text="{Binding Path=SelectedItem}" FontSize="Medium"/>
     </StackLayout>
 </ContentPage>

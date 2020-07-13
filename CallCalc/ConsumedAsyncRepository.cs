@@ -8,7 +8,7 @@ namespace CallCalc
 {
     public class ConsumedAsyncRepository
     {      
-        public SQLiteAsyncConnection database;
+        SQLiteAsyncConnection database;
 
         public ConsumedAsyncRepository(string databasePath)
         {
