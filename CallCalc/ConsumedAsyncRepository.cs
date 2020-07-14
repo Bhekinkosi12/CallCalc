@@ -29,6 +29,10 @@ namespace CallCalc
         {
             return await database.GetAsync<Consumed>(id);
         }
+        public async Task<List<Consumed>> FindByName(string name)
+        {
+            return await database.Table<Consumed>().Where(x => x.Name == name).ToListAsync();
+        }
         public async Task<int> DeleteItemAsync(Consumed item)
         {
             return await database.DeleteAsync(item);

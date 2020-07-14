@@ -12,22 +12,18 @@ namespace CallCalc.DishesPage
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DishesPage : ContentPage
     {
-        List<DishComponent> list = new List<DishComponent>();
+        Dictionary<string, DishComponent> dictionary = new Dictionary<string, DishComponent>();
         public DishesPage()
         {
             InitializeComponent();
-            list.Add(new Egg());
-            list.Add(new Chicken());
+            dictionary.Add("Яйцо", new Egg());
+            dictionary.Add("Курица", new Chicken());
         }
         protected override async void OnAppearing()
         {
             await App.Database.CreateTable();
             consumedList.ItemsSource = await App.Database.GetItemsAsync();
             base.OnAppearing();
-        }
-        private void picker_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
         private async void consumedList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -42,7 +38,16 @@ namespace CallCalc.DishesPage
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            
+            if(picker.SelectedItem != null)
+            {
+                string name = picker.SelectedItem.ToString();
+                List<object> storedConsumptionList = new List<object>
+                {
+                    App.Database.FindByName(name)
+                };
+                Consumed storedConsumption = new Consumed();
+                
+            }
         }
     }
 }

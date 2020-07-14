@@ -7,7 +7,7 @@
              x:Class="CallCalc.DishesPage.DishesPage">
     <StackLayout>
         <Label Text="Выберите блюдо:" FontSize="Large"/>
-        <Picker x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged">
+        <Picker x:Name="picker">
             <Picker.Items>
                 <x:String>Яичница</x:String>
                 <x:String>Курица</x:String>
