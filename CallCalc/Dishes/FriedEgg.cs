@@ -23,6 +23,7 @@ namespace CallCalc.Dishes
             double o = oil.TotalCallories();
             e += o;
             return e;
+            
         }
     }
 }
